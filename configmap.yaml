@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  BOUNCER_CERTIFICATE: /app/conf/external-cert.pem
+  BOUNCER_KEY: /app/conf/external-key.pem
+  BOUNCER_REGISTRY_WHITELIST: /app/conf/whitelist.csv
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: imgvalidator
+  namespace: imgvalidator

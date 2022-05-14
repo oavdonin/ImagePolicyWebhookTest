@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: imgvalidator
+  name: imgvalidator
+  namespace: imgvalidator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imgvalidator
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: imgvalidator
+    spec:
+      containers:
+      - image: flavio/kube-image-bouncer
+        name: kube-image-bouncer
+        resources: {}
+        env:
+          - name: BOUNCER_PORT
+            value: 1323
+        volumeMounts:
+        - name: conf
+          mountPath: "/app/conf"
+          readOnly: true
+      volumes:
+      - name: conf
+        secret:
+          secretName: conf
+status: {}
