@@ -22,9 +22,9 @@ spec:
       - image: flavio/kube-image-bouncer
         name: kube-image-bouncer
         resources: {}
-        env:
-          - name: BOUNCER_PORT
-            value: "1323"
+        envFrom:
+        - configMapRef:
+            name: imgvalidator
         volumeMounts:
         - name: conf
           mountPath: "/app/conf"

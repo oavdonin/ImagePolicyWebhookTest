@@ -3,6 +3,7 @@ data:
   BOUNCER_CERTIFICATE: /app/conf/external-cert.pem
   BOUNCER_KEY: /app/conf/external-key.pem
   BOUNCER_REGISTRY_WHITELIST: /app/conf/whitelist.csv
+  BOUNCER_PORT: "1323"
 kind: ConfigMap
 metadata:
   creationTimestamp: null
