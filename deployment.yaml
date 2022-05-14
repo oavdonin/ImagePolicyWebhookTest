@@ -24,11 +24,13 @@ spec:
         resources: {}
         env:
           - name: BOUNCER_PORT
-            value: 1323
+            value: "1323"
         volumeMounts:
         - name: conf
           mountPath: "/app/conf"
           readOnly: true
+        ports:
+        - containerPort: 1323
       volumes:
       - name: conf
         secret:
